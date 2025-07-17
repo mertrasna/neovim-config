@@ -17,6 +17,10 @@ vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("n", "H", "^")  -- Jump to first non-whitespace
 vim.keymap.set("n", "L", "$")  -- Jump to end of line
 
+-- NvimTree
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+
 -- Quick reload
 vim.keymap.set("n", "<leader><CR>", function()
   vim.cmd("w")  -- save current file

@@ -20,3 +20,10 @@ opt.undofile = true              -- Persistent undo history
 -- Performance
 opt.updatetime = 300
 opt.timeoutlen = 500
+
+-- del netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+
+
