@@ -17,9 +17,18 @@ vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("n", "H", "^")  -- Jump to first non-whitespace
 vim.keymap.set("n", "L", "$")  -- Jump to end of line
 
--- Lua quick reload
+-- Quick reload
 vim.keymap.set("n", "<leader><CR>", function()
-  vim.cmd("luafile %")
-end, { desc = "Run current Lua file" })
+  vim.cmd("w")  -- save current file
+  local ft = vim.bo.filetype
+
+  if ft == "lua" then
+    vim.cmd("luafile %")
+  elseif ft == "python" then
+    vim.cmd("!python3 %")
+  else
+    print("Unsupported filetype: " .. ft)
+  end
+end, { desc = "Run current file" })
 
 
