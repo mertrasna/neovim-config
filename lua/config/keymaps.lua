@@ -17,5 +17,9 @@ vim.keymap.set("v", "p", '"_dP')
 vim.keymap.set("n", "H", "^")  -- Jump to first non-whitespace
 vim.keymap.set("n", "L", "$")  -- Jump to end of line
 
+-- Lua quick reload
+vim.keymap.set("n", "<leader><CR>", function()
+  vim.cmd("luafile %")
+end, { desc = "Run current Lua file" })
 
 
